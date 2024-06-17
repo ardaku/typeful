@@ -7,8 +7,9 @@ enum TestEnum {
 }
 
 impl TestEnum {
+    const VARIANT_ARRAY: [TestEnum; 3] =
+        Self::variant_array::<Self::VARIANT_COUNT>();
     const VARIANT_COUNT: usize = Self::variant_count();
-    const VARIANT_ARRAY: [TestEnum; 3] = Self::variant_array::<Self::VARIANT_COUNT>();
 }
 
 fn main() {
