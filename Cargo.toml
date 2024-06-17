@@ -2,5 +2,39 @@
 name = "typeful"
 version = "0.1.0"
 edition = "2021"
+license = "Apache-2.0 OR BSL-1.0 OR MIT"
+documentation = "https://docs.rs/typeful"
+homepage = "https://github.com/ardaku/typeful/releases"
+repository = "https://github.com/ardaku/typeful"
+readme = "README.md"
+description = "A collection of helper derive macros for type patterns"
+keywords = ["type", "derive", "macro", "enum", "error"]
+categories = ["rust-patterns"]
+include = [
+    "/LICENSE_APACHE",
+    "/LICENSE_BOOST",
+    "/LICENSE_MIT",
+    "/README.md",
+    "/src/*",
+]
 
-[dependencies]
+[lib]
+proc-macro = true
+
+[dependencies.syn]
+version = "2.0.66"
+default-features = false
+features = [
+    "full",
+    "parsing",
+    "proc-macro",
+    "printing",
+    "extra-traits",
+    "clone-impls",
+]
+
+[dependencies.proc-macro2]
+version = "1.0.85"
+
+[dependencies.quote]
+version = "1.0.36"
