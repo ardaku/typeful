@@ -53,10 +53,7 @@ fn impl_enum_functions(
 
     for attr in attrs {
         let Meta::List(list) = attr.meta else {
-            return Err(Error::new(
-                attr.bracket_token.span.join(),
-                "expected attribute list",
-            ));
+            continue;
         };
         let path = &list.path;
 
