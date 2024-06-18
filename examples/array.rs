@@ -1,4 +1,4 @@
-#[derive(Debug, typeful::EnumFunctions)]
+#[derive(Copy, Clone, Debug, typeful::EnumFunctions)]
 #[enum_functions(variant_array, variant_count)]
 enum TestEnum {
     VariantA,
@@ -8,7 +8,7 @@ enum TestEnum {
 
 impl TestEnum {
     const VARIANT_ARRAY: [TestEnum; 3] =
-        Self::variant_array::<Self::VARIANT_COUNT>();
+        Self::variant_array::<{ Self::VARIANT_COUNT }>();
     const VARIANT_COUNT: usize = Self::variant_count();
 }
 
