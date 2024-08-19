@@ -81,7 +81,7 @@ fn impl_enum_functions(
         }
 
         if path.ident != "enum_functions" {
-            return Err(Error::new(path.ident.span(), "unknown attribute"));
+            continue;
         }
 
         let Data::Enum(ref data_enum) = data else {
